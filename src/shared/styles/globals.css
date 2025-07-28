@@ -1,0 +1,90 @@
+@import './fonts.css';
+
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  font-synthesis: none;
+  scroll-padding-top: 100px;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+input[type='number'],
+input[type='number']:hover,
+input[type='number']:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+::-moz-selection {
+  background-color: #00d39190;
+  color: #000000;
+}
+
+::selection {
+  background-color: #00d39190;
+  color: #000000;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 3s ease-in-out infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.badge {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: fadeInUp 0.5s ease-out forwards;
+}
